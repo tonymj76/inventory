@@ -1,0 +1,18 @@
+create_table("products") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("name", "string", {})
+	t.Column("description", "text", {})
+	t.Column("category_id", "uuid", {})
+	t.Column("merchant_id", "uuid", {})
+	t.Column("cart_id", "uuid", {})
+	t.Column("order_item_id", "uuid", {})
+	t.Column("parent_id", "uuid", {})
+	t.Column("quantity", "integer", {"default": 0})
+	t.Column("weight", "integer", {"default": 0})
+	t.Column("price", "integer", {})
+	t.Column("active","boolean", {"default":true})
+	t.Column("refound_policy", "text", {})
+	t.Column("tag", "string", {})
+	t.Column("slug", "string", {})
+}

@@ -1,0 +1,6 @@
+create_table("cities") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("state_id", "uuid", {})
+	t.Column("name", "string", {})
+	t.Timestamps()
+}

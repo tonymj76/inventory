@@ -1,0 +1,48 @@
+version: '3'
+services:
+  server:
+    container_name: OCM-server
+    build:
+      context: ./server/
+    volumes:
+      - ./server/:/go/src/github.com/tonymj76/inventory    ports:
+      - '3001:3001'
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+    tty: true
+    restart: 'no'
+    env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
+
+  client:
+    container_name: OCM-client
+    build:
+      context: ./client/
+    command: npm start
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    networks:
+      - app-network
+    depends_on:
+      - server
+    ports:
+      - '3000:3000'
+      - '35729:35729'
+
+  mysql:
+    image: mysql:5.7
+    container_name: OCM-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: onecitymate
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - app-network
+volumes:
+  mysql:
+networks:
+  app-network:
+    driver: bridge

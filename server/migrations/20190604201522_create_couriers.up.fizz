@@ -1,0 +1,15 @@
+create_table("couriers") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("company_name", "string", {})
+	t.Column("user_id", "uuid", {})
+	t.Column("phone_number", "string", {})
+	t.Column("house_number", "string", {})
+	t.Column("street", "string", {})
+	t.Column("city", "string", {})
+	t.Column("state", "string", {})
+	t.Column("country", "string", {"default":"Nigeria"})
+	t.Column("business_email", "string", {})
+}
+
+add_index("couriers", "company_name", {"unique": true})

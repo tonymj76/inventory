@@ -1,0 +1,9 @@
+create_table("carts") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("user_id", "uuid", {})
+	t.Column("product_id", "uuid", {})
+	t.Column("status", "string", {})
+	t.Column("quantity", "integer", {"default":1})
+	t.Column("total_price", "float", {"default":0})
+}

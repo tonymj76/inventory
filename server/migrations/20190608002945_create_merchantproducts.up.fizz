@@ -1,0 +1,6 @@
+create_table("merchantproducts") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("merchant_id", "uuid", {})
+	t.Column("product_id", "uuid", {})
+}

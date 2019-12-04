@@ -1,0 +1,216 @@
+//Merchant
+.merchant-orderItems{
+  .segment{
+    width: 98% !important;
+    margin: 1em auto;
+  }
+  .ui.segment:last-child {
+    margin-bottom: 21rem;
+  }
+   .ui.dropdown .menu {
+    left: -96px !important;
+    top: 102% !important;
+    width: fit-content !important;
+  }
+}
+
+#section-card {
+  margin: 1rem;
+  .ui.fluid.card {
+    @include mobile-grid();
+    @include boxShadow();
+    .content{
+      .label{
+        width: 3em;
+        align-self: center;
+      }
+      .summary{
+        font-weight: 700 !important;
+        font-size: 2.5rem !important;
+        line-height: 1 !important;
+        margin: 1rem auto !important;
+      }
+    }
+    .content:first-child {
+      justify-self: center;
+      padding: .5em 1em !important;
+      .ui.dropdown .menu {
+        left: 0px !important;
+        top: 103% !important;
+      }
+    }
+    .content:last-child ~ div{
+      text-align: center;
+    }
+
+    @include responsive(resp(min_tab)){
+      grid-template: repeat(3, auto)/ repeat(3, 1fr);
+      .content:first-child {
+        grid-column: 1/-1;
+        grid-row: 1;
+        justify-self: stretch;
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+        align-content: center;
+        .header {
+          align-self: center;
+        }
+        #dropdown-select {
+          grid-column: 2;
+          justify-self: end;
+          .ui.dropdown .menu {
+            left: 0px !important;
+            top: 103% !important;
+          }
+        }
+      }
+      .content:last-child {
+        grid-column: 1/-1;
+        grid-row: 3;
+      }
+    }
+  }
+}
+
+#section-card-info {
+  margin: 1rem;
+  .ui.cards {
+    justify-content: space-between;
+    margin-top: 0.125em;
+    .ui.card{
+      width: 100%;
+      .content{
+        .label-info{
+          width: 3em;
+          align-self: center;
+        }
+        .card-info{
+          font-weight: 700 !important;
+          font-size: 2.5rem !important;
+          line-height: 1 !important;
+          margin: 1rem auto !important;
+        }
+      }
+    }
+    .ui.card >.content{
+      flex-grow: 0;
+    }
+    .ui.feed > .event > .content {
+      align-self: center;
+    }
+  }
+  @include responsive(resp(min_tab)){
+    .ui.cards {
+      .ui.card{
+        width: 31%;
+      }
+    }
+  }
+  @include responsive(resp(tab)){
+    .ui.cards {
+      .ui.card{
+        width: 31%;
+      }
+    }
+  }
+}
+
+#section-form {
+  margin-left: 1rem;
+  .ui.cards {
+    justify-content: space-between;
+    .ui.card{
+      width: 31%;
+    }
+  }
+  .card{
+    padding: 1rem !important;
+  }
+}
+.merchant-product {
+  .segment{
+    width: 98% !important;
+    margin: 1em auto;
+  }
+   .ui.dropdown .menu {
+    left: 1px !important;
+    top: 102% !important;
+    width: fit-content !important;
+  }
+  .ui.segment:first-child {
+    margin-top: 1em;
+  }
+  .ui.segment:last-child {
+    margin-bottom: 21rem;
+  }
+}
+
+.merchant-grid {
+  @include mobile-grid();
+  .ui.table {
+    @include genSemantic();
+  }
+  .ui.horizontal.segments {
+    @include genSemantic();
+  }
+  .ui.form {
+    @include genSemantic()
+  }
+  .ui.vertical.menu {
+    @include genSemantic()
+  }
+
+  .ui.dropdown .menu {
+    left: 0px !important;
+    top: 102% !important;
+    width: fit-content !important;
+  }
+
+  @include responsive(resp(min_tab)){
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: .5rem;
+    .ui.form {
+      grid-column: 1/ span 4;
+      grid-row: 2;
+      .fields{
+        flex-direction: column;
+      }
+    }
+    .ui.vertical.menu {
+      grid-column: 5/ span 3;
+      grid-row: 2;
+    }
+  }
+
+  @include responsive(resp(desktop)){
+    grid-template-columns: 6rem repeat(6, 1fr) 6rem;
+    grid-column-gap: .5rem;
+  }
+}
+
+#portfolio {
+  margin-bottom: 21rem !important;
+}
+#dashboard-sidebar {
+  .ui.labeled.icon.menu, .ui.icon.menu > .item {
+    text-align: left;
+    margin: 1em 0em;
+    width: 250px;
+    overflow: hidden;
+
+    &::before {
+      width: 0;
+    }
+  }
+
+  .ui.visible.wide.left.sidebar ~ .pusher {
+    transform: translate3d(250px, 0, 0);
+  }
+}
+
+#mobile-sidebar > a {
+    margin: 1em 0em;
+    &::before {
+      width: 0;
+    }
+}

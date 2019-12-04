@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+  buffalo dev
+elif [[ "$1" == 'db' ]]; then
+  if [[ "$2" == 'reset' ]]; then
+    echo "Running droping table and running migration ..."
+    buffalo-pop pop reset -e development
+    echo "Finished running migration"
+  elif [[ "$2" == 'migrate' ]]; then
+    echo "running migration ..."
+    buffalo-pop pop migrate up -e development
+    echo "Finished running migration"
+  elif [[ "$2" == 're-mi' ]]; then
+    buffalo-pop pop reset -e development
+    buffalo task db:seed
+  elif [[ "$2" == 'seed' ]]; then
+    buffalo task db:seed
+  else
+    buffalo-pop pop drop -e development
+    buffalo-pop pop create -e development
+    buffalo-pop pop migrate up -e development
+    buffalo task db:seed
+  fi
+fi

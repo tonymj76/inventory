@@ -1,0 +1,9 @@
+create_table("delivery_prices") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("default_price", "float", {})
+	t.Column("default_weight", "float", {})
+	t.Column("order_delivery_price", "float", {})
+	t.Column("order_weight", "float", {})
+	t.Column("courier_id", "uuid", {})
+}

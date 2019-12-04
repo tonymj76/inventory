@@ -1,0 +1,6 @@
+create_table("images") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("product_id", "uuid", {})
+	t.Column("url", "string", {})
+}

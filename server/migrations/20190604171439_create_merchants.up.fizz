@@ -1,0 +1,17 @@
+create_table("merchants") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("user_id", "uuid", {})
+	t.Column("business_name", "string", {})
+	t.Column("phone_number", "string", {})
+	t.Column("description", "text", {"null": true})
+	t.Column("cac_reg_no", "string", {"null": true})
+	t.Column("house_number", "string", {})
+	t.Column("street", "string", {})
+	t.Column("city", "string", {})
+	t.Column("state", "string", {})
+	t.Column("country", "string", {"default":"Nigeria"})
+	t.Column("business_email", "string", {})
+}
+
+add_index("merchants", "business_name", {"unique": true})

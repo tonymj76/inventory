@@ -1,0 +1,11 @@
+create_table("orders") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("user_id", "uuid", {})
+	t.Column("courier_id", "uuid", {})
+	t.Column("shipping_detail_id", "uuid", {})
+	t.Column("quantity", "integer", {})
+	t.Column("total_price", "float", {})
+	t.Column("payment_ref", "string", {})
+	t.Column("status", "string", {})
+}

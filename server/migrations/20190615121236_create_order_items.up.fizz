@@ -1,0 +1,12 @@
+create_table("order_items") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("user_id", "uuid", {})
+	t.Column("merchant_id", "uuid", {})
+	t.Column("product_id", "uuid", {})
+	t.Column("order_id", "uuid", {})
+	t.Column("quantity", "integer", {})
+	t.Column("total_price", "float", {})
+	t.Column("delivery_state", "string", {})
+	t.Column("status", "string", {})
+}

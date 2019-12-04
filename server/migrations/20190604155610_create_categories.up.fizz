@@ -1,0 +1,8 @@
+create_table("categories") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("name", "string", {})
+	t.Column("parent_id", "uuid", {})
+}
+
+add_index("categories", "name", {"unique": true})

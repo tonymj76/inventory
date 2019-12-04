@@ -1,0 +1,85 @@
+$primary: #fd901c;
+$secondary: #515C6F;
+$light-gray: #727C8E;
+$white: #FFFFFF;
+$black: #000;
+
+$lightGreen: #3cbfc8;
+$lightBlue: #01a8fe;
+$skyBlue: #2bd6e2;
+$backgroundGray: #f8f8f8;
+$fontGray: #4a4a4a;
+$boxShadow: 0 2px 20px 0 rgba(185, 188, 210, 0.2);
+
+
+$tony: () !default;
+$tony: map-merge((
+  'tmj': (
+    'light-green': $lightGreen,
+    'light-blue': $lightBlue,
+    'base': $primary,
+    'secondary': $secondary,
+    'light-gray': $light-gray,
+    'white' : $white,
+    'black': $black
+  ),
+    'black': (
+      'base': $black
+    ),
+    'white': (
+      'base':$white
+    )
+), $tony);
+
+$enable_full_palette: true !default;
+
+//colors classes
+@each $color_name, $color in $tony {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .#{$color_name} {
+        background-color: $color_value !important;
+      }
+      .#{$color_name}-text {
+        color: $color_value !important;
+      }
+      .rgba-#{$color_name}-slight,
+      .rgba-#{$color_name}-slight:after {
+        background-color: rgba($color_value, .1) !important;
+      }
+      .rgba-#{$color_name}-light,
+      .rgba-#{$color_name}-light:after {
+        background-color: rgba($color_value, .3) !important;
+      }
+      .rgba-#{$color_name}-strong,
+      .rgba-#{$color_name}-strong:after {
+        background-color: rgba($color_value, .7) !important
+      }
+    }
+    @else {
+      @if $enable_full_palette {
+        .#{$color_name}.#{$color_type}{
+          background-color: $color_value !important;
+        }
+        .#{$color_type}-text{
+          color: $color_value !important;
+        }
+      }
+    }
+  }
+}
+
+// Stylish rgba colors
+$stylish-rgba: (
+  "rgba-stylish-slight": rgba(62, 69, 81, .1),
+  "rgba-stylish-light": rgba(62, 69, 81, .3),
+  "rgba-stylish-strong": rgba(62, 69, 81, .7),
+  "body-grey-bg": rgba(241, 244, 246, 1),
+  'white-bg': $white,
+);
+
+@each $color_name, $color_value in $stylish-rgba {
+  .#{$color_name} {
+    background-color: $color_value !important;
+  }
+}

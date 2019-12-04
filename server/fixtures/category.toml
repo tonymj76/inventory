@@ -1,0 +1,17 @@
+[[scenario]]
+name = "category"
+
+  [[scenario.table]]
+    name = "users"
+
+    [[scenario.table.row]]
+      id = "<%= uuidNamed("userID") %>"
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
+      merchant_id = "<%= uuidNamed("merchantID") %>"
+      first_name = "Mark"
+      last_name = "Bates"
+      email = "mark@gmail.com"
+      password = "password"
+      password_confirmation = "password"
+      is_merchant = true

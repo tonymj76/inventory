@@ -1,0 +1,77 @@
+//my fonts
+@mixin font($font-faminly, $font-file, $font-weight:normal, $font-style:normal) {
+  @font-face {
+    font-family: $font-faminly;
+    src: url($font-file+'.eot');
+    src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
+      url($font-file+'.woff') format('woff'),
+      url($font-file+'.woff2') format('woff2'),
+      url($font-file+'.ttf') format('truetype'),
+      url($font-file+'.svg#aller') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+
+
+@include font('Montserrat', '../font/Montserrat/Montserrat-Regular');
+@include font('Roboto', '../font/Roboto/Roboto-Regular');
+@include font('Tangerine', '../font/Tangerine/Tangerine-Regular');
+
+$custom-font: (
+  mon: 'Montserrat',
+  rob: 'Roboto',
+  tang: 'Tangerine'
+);
+
+@function givefont($font-name) {
+  $holder: map-get($map: $custom-font, $key: $font-name);
+  $font-full-name:$holder, Lato, Arial, Helvetica, sans-serif !default;
+  @return $font-full-name;
+}
+
+// Responsive
+$responsive: (desktop: 75em,
+min_desktop: 62em,
+tab: 48em,
+min_tab:36em);
+
+@mixin responsive($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@function resp($resp-size) {
+  @return map-get($map: $responsive, $key: $resp-size);
+}
+
+@mixin box {
+  width: 84%;
+  height: 133px;
+  border: none;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  font-family: givefont(rob);
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: $white;
+}
+
+@mixin mobile-grid {
+  display: grid !important;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  // grid-auto-rows: minmax(2rem, auto);
+  // grid-gap: 2em;
+  // margin-bottom: 21rem;
+}
+@mixin boxShadow {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+}
+
+@mixin genSemantic {
+  grid-column: 1/8;
+  width: 95%;
+  margin: 1em auto;
+}

@@ -1,0 +1,13 @@
+create_table("addresses") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("first_name", "string", {})
+	t.Column("last_name", "string", {})
+	t.Column("house_number", "string", {})
+	t.Column("street", "string", {})
+	t.Column("city", "string", {})
+	t.Column("state", "string", {})
+	t.Column("country", "string", {"default":"Nigeria"})
+	t.Column("phone", "string", {})
+	t.Column("user_id", "uuid", {})
+}
