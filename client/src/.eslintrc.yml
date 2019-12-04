@@ -1,0 +1,43 @@
+parser: 'babel-eslint'
+env:
+  browser: true
+  es6: true
+extends:
+  - google
+plugins:
+  - react
+  - babel
+parserOptions:
+  allowImportExportEverywhere: true
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 6
+  sourceType: module
+rules:
+  strict:
+    - error
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - off
+    # - unix
+  camelcase:
+    - off
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  no-unused-vars:
+    - error
+    - varsIgnorePattern: React
+  react/jsx-uses-vars:
+    - error
+  require-jsdoc:
+    - off
+  no-invalid-this:
+    - off
+  babel/no-invalid-this:
+    - error
