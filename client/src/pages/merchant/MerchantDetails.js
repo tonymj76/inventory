@@ -9,7 +9,7 @@ import StyledComponents from 'components/styled';
 import {MerchantSchema, MerchantModel} from 'models/MerchantRegistration';
 import validate from 'react-joi-validation';
 import {connect} from 'react-redux';
-import {addMerchantDetail} from 'actions';
+import {addMerchantDetail, getAllStates} from 'actions';
 import {
   getTransformedStatesByName,
   getStatesList,
@@ -27,6 +27,10 @@ const mapStateToProps = (state) => ({
 
 export class MerchantDetails extends Component {
   state = {};
+
+  async componentDidMount() {
+    await this.props.getAllStates();
+  }
 
   handleStateChange = (event, new_state) => {
     const {changeValue, stateList} = this.props;
@@ -228,7 +232,7 @@ const validationOptions = {
 
 export default connect(
   mapStateToProps,
-  {addMerchantDetail}
+  {addMerchantDetail, getAllStates}
 )(
   withRouter(
     validate(MerchantDetails, validationOptions)
