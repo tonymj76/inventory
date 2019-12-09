@@ -7,11 +7,10 @@ import {
   Grid,
   Button,
 } from 'semantic-ui-react';
-import LayoutContainer from 'components/display_layout';
 
-const ResponsiveContainer = ({children, history}) => (
+const ResponsiveContainer = ({children}) => (
   <div>
-    <LayoutContainer children={children} history={history} />
+    {children}
   </div>
 );
 
