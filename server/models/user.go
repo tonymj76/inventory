@@ -22,7 +22,6 @@ type User struct {
 	MerchantID uuid.UUID `json:"merchant_id" db:"merchant_id"`
 	Courier    Courier   `json:"-" has_one:"courier" fk_id:"user_id"`
 	Merchant   Merchant  `json:"-" has_one:"merchant" fk_id:"user_id"`
-	Addresses  Addresses `json:"addresses" many_to_many:"useraddresses" order_by:"created_at desc"`
 
 	FirstName            string `json:"first_name" db:"first_name"`
 	LastName             string `json:"last_name" db:"last_name"`

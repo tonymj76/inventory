@@ -35,13 +35,8 @@ const Auth = {
   },
 
   loginRedirect: (currentUser, hist) => {
-    if (currentUser.is_admin) {
-      hist.push('/admin');
-    } else if (currentUser.is_courier) {
-      hist.push('/courier/dashboard');
-    } else if (currentUser.is_merchant) {
-      hist.push('/merchant');
-    } else hist.push('/');
+    hist.push('/merchant');
+    console.log(currentUser);
   },
 
   logout: ({dispatch, history}) => {
