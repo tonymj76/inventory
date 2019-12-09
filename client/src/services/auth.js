@@ -6,7 +6,6 @@ import {
   removeToken,
   addUser,
   removeUser,
-  emptyCart,
 } from '../actions';
 
 const Auth = {
@@ -52,7 +51,6 @@ const Auth = {
     }, false).then(() => {
       dispatch(removeToken());
       dispatch(removeUser());
-      dispatch(emptyCart());
       showToast('success', 'Logged out!!');
       history.push('/');
     }).catch((err) => {

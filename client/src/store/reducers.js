@@ -226,8 +226,4 @@ export default combineReducers({
     fetching,
     category,
   }),
-  couriers: combineReducers({
-    fetching,
-    couriers,
-  }),
 });
