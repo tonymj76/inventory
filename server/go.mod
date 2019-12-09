@@ -1,4 +1,4 @@
-module github.com/tonymj76/inventory
+module github.com/tonymj76/inventory/server
 
 go 1.13
 
