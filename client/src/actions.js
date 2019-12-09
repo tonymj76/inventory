@@ -36,7 +36,6 @@ export function clearAllErrors() {
     payload: [],
   };
 }
-}
 
 export const getUsers = () => async (dispatch) => {
   dispatch({
