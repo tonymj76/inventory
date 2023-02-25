@@ -3,6 +3,7 @@ module github.com/tonymj76/inventory/server
 go 1.13
 
 require (
+	github.com/bxcodec/faker v2.0.1+incompatible
 	github.com/bxcodec/faker/v3 v3.2.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gobuffalo/buffalo v0.15.3
@@ -12,7 +13,9 @@ require (
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190224201358-0d45762ab655
 	github.com/gobuffalo/nulls v0.1.0
+	github.com/gobuffalo/packr/v2 v2.7.1
 	github.com/gobuffalo/pop v4.13.0+incompatible
+	github.com/gobuffalo/suite v2.8.2+incompatible
 	github.com/gobuffalo/validate v2.0.3+incompatible
 	github.com/gobuffalo/x v0.1.0
 	github.com/gofrs/uuid v3.2.0+incompatible
@@ -22,6 +25,7 @@ require (
 	github.com/pkg/errors v0.8.1
 	github.com/rs/cors v1.7.0
 	github.com/sirupsen/logrus v1.4.2
+	github.com/stretchr/testify v1.4.0
 	github.com/unrolled/secure v1.0.6
-	golang.org/x/crypto v0.0.0-20191202143827-86a70503ff7e
+	golang.org/x/crypto v0.1.0
 )
